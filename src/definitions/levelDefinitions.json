@@ -1,0 +1,22 @@
+[
+  {
+    "style": "01",
+    "heightInModules": 2,
+    "widthInModules": 2
+  },
+  {
+    "style": "01",
+    "heightInModules": 2,
+    "widthInModules": 3
+  },
+  {
+    "style": "02",
+    "heightInModules": 3,
+    "widthInModules": 3
+  },
+  {
+    "style": "02",
+    "heightInModules": 3,
+    "widthInModules": 4
+  }
+]

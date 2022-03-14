@@ -1,0 +1,68 @@
+{
+  "Seburo C-25A": {
+    "type": "submachine gun",
+    "equippable": true,
+    "equipSlot": "firearm",
+    "description": "bullpup submachine gun, forward ejection, top mounted brass catcher",
+    "ammo": "6mmx25mm",
+    "bursts": 1,
+    "roundsPerBurst": 3,
+    "damage": {
+      "fire": 10,
+      "melee": 30
+    }
+  },
+  "Seburo C-26A": {
+    "type": "assault rifle",
+    "equippable": true,
+    "equipSlot": "firearm",
+    "description": "assault rifle, forward ejection, top mounted brass catcher",
+    "ammo": "6mmx25mm",
+    "bursts": 2,
+    "roundsPerBurst": 3,
+    "damage": {
+      "fire": 10,
+      "melee": 30
+    }
+  },
+  "Seburo M-5": {
+    "type": "pistol",
+    "equippable": true,
+    "equipSlot": "firearm",
+    "description": "medium sized service weapon",
+    "ammo": "6mmx25mm",
+    "bursts": 1,
+    "roundsPerBurst": 1,
+    "damage": {
+      "fire": 20,
+      "melee": 30
+    }
+  },
+  "Katana": {
+    "type": "sword",
+    "equippable": true,
+    "equipSlot": "melee",
+    "description": "curved, single-edged 94cm blade with a circular guard"
+  },
+  "Thermoptic Camo": {
+    "type": "armor",
+    "equippable": true,
+    "equipSlot": "equipment",
+    "description": "cloak disguise thermal and optical signature"
+  },
+  "6mmx25mm": {
+    "type": "ammunition",
+    "description": "6mmx25mm submachine gun rounds",
+    "power": 1
+  },
+  "5.45mmx45mm": {
+    "type": "ammunition",
+    "description": "5.45mmx45mm rifle rounds",
+    "power": 2
+  },
+  "5.45mmx18mm": {
+    "type": "ammunition",
+    "description": "5.45mmx18mm pistol rounds",
+    "power": 1
+  }
+}

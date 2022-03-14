@@ -1,0 +1,11 @@
+{
+  "button-base": {
+    "tileIndex": 15
+  },
+  "button-frame": {
+    "tileIndex": 16
+  },
+  "button-active": {
+    "tileIndex": 15
+  }
+}

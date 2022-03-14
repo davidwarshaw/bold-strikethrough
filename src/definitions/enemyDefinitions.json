@@ -1,0 +1,26 @@
+{
+  "enemy-00": {
+    "hackDefense": 0.60,
+    "items": {
+      "firearm": "Seburo M-5",
+      "melee": "Seburo M-5",
+      "equipmen": null
+    }
+  },
+  "enemy-01": {
+    "hackDefense": 0.60,
+    "items": {
+      "firearm": "Seburo M-5",
+      "melee": "Seburo M-5",
+      "equipmen": null
+    }
+  },
+  "enemy-02": {
+    "hackDefense": 0.60,
+    "items": {
+      "firearm": "Seburo C26-A",
+      "melee": "Seburo C26-A",
+      "equipmen": null
+    }
+  }
+}
