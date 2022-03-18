@@ -36,6 +36,8 @@ export default class GameOverScene extends Phaser.Scene {
       centerX,
       centerY
     );
+
+    this.sound.stopAll();
   }
 
   offsetForText(text) {

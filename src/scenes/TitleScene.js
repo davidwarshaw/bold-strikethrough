@@ -51,6 +51,8 @@ export default class TitleScene extends Phaser.Scene {
         centerY + 72
       );
     });
+
+    this.sound.stopAll();
   }
 
   offsetForText(text) {
