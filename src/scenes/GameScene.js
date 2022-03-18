@@ -82,6 +82,10 @@ export default class GameScene extends Phaser.Scene {
         }
       }
     });
+
+    this.sounds = {
+      elevator: this.sound.add("elevator"),
+    };
   }
 
   update(time, delta) {}
@@ -94,16 +98,25 @@ export default class GameScene extends Phaser.Scene {
   }
 
   playerKilled() {
+    this.player.sounds.walk.stop();
+    this.enemies.list.forEach((enemy) => enemy.sounds.walk.stop());
+
     this.scene.remove("HudScene");
     this.scene.start("GameOverScene", this.playState);
   }
 
   nextLevel() {
-    this.playState.levelNumber++;
-    if (this.playState.levelNumber > 4) {
+    this.sounds.elevator.play();
+
+    this.player.sounds.walk.stop();
+    this.enemies.list.forEach((enemy) => enemy.sounds.walk.stop());
+
+    if (this.playState.levelNumber === 3) {
       this.playState.levelNumber = 0;
-      this.scene.start("WinScene");
+      this.scene.remove("HudScene");
+      this.scene.start("WinScene", this.playState);
     } else {
+      this.playState.levelNumber++;
       this.scene.remove("HudScene");
       this.scene.add("HudScene", HudScene, true, this.playState);
       this.scene.start("GameScene", this.playState);

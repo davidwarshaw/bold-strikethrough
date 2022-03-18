@@ -29,8 +29,8 @@ export default class BallisticsSubSystem {
       const hitCharacter = this.characterAtTilePosition(tilePosition);
       if (hitCharacter) {
         const outcome = this.combatSubSystem.fireHitsCharacter(attacker, hitCharacter, weapon);
-        console.log("outcome:");
-        console.log(outcome);
+        // console.log("outcome:");
+        // console.log(outcome);
         power -= outcome.stoppingPower;
         hitCharacters.push(hitCharacter);
       }

@@ -290,6 +290,7 @@ export default class GameSystem {
 
     // Tween movement
     const toTileWorld = TileMath.addHalfTile(this.map.tilemap.tileToWorldXY(to.x, to.y));
+    character.sounds.melee.play();
     return Async.tween(this.scene, {
       targets: character,
       x: toTileWorld.x,
@@ -304,6 +305,7 @@ export default class GameSystem {
   }
 
   createFireSequenceBeat(character, lineFrom, lineTo, hitCharacters) {
+    const pauseAmount = () => 0.5 * properties.turnDurationMillis + properties.rng.getUniform();
     const createLine = () =>
       new Promise((resolve) => {
         // console.log("Creating line");
@@ -317,7 +319,7 @@ export default class GameSystem {
         character.fireLine.setVisible(true);
         resolve();
       });
-    const pause = () => Async.timer(this.scene, { delay: 0.5 * properties.turnDurationMillis });
+    const pause = () => Async.timer(this.scene, { duration: pauseAmount() });
     const clear = () =>
       new Promise((resolve) => {
         // console.log("Clearing line");
@@ -359,6 +361,8 @@ export default class GameSystem {
     const sequence = Async.sequential(beats.flat()).then(() =>
       character.playAnimationForAction(to, "idle")
     );
+
+    character.sounds.fire.play();
     return sequence;
   }
 
@@ -370,6 +374,7 @@ export default class GameSystem {
     character.playAnimationForAction(to, "move");
 
     // Tween movement
+    character.sounds.walk.play();
     const toTileWorld = TileMath.addHalfTile(this.map.tilemap.tileToWorldXY(to.x, to.y));
     return Async.tween(this.scene, {
       targets: character,
@@ -377,6 +382,7 @@ export default class GameSystem {
       y: toTileWorld.y,
       duration: properties.turnDurationMillis,
     }).then(() => {
+      character.sounds.walk.stop();
       character.setDepthForY();
       // // If there's no next turn for the player, stop the animation
       // if (!character.peekNextTurn()) {

@@ -102,7 +102,13 @@ export default class Character extends Phaser.GameObjects.Container {
     // this.anims.stopOnFrame(stopFrame);
 
     this.sounds = {
-      walk: scene.sound.add("walk", { loop: true }),
+      walk: scene.sound.add("walk", { loop: true, volume: 0.05 }),
+      melee: scene.sound.add("melee"),
+      fire: scene.sound.add("fire-enemy"),
+      hit: scene.sound.add("hit"),
+      die: scene.sound.add("die-enemy"),
+      hack: scene.sound.add("hack"),
+      hackEnded: scene.sound.add("hack-ended"),
     };
 
     this.nextTurn = null;
@@ -256,6 +262,10 @@ export default class Character extends Phaser.GameObjects.Container {
 
     if (killed) {
       this.kill();
+      this.sounds.walk.stop();
+      this.sounds.die.play();
+    } else {
+      this.sounds.hit.play();
     }
   }
 
@@ -264,6 +274,8 @@ export default class Character extends Phaser.GameObjects.Container {
     this.isPlayerControlled = true;
     this.hackTurnsLeftDisplay.setVisible(true);
     this.arrow.setTexture("arrow", 1);
+
+    this.sounds.hack.play();
   }
 
   controlTurnOver() {
@@ -278,6 +290,8 @@ export default class Character extends Phaser.GameObjects.Container {
     this.isPlayerControlled = false;
     this.hackTurnsLeftDisplay.setVisible(false);
     this.arrow.setTexture("arrow", 0);
+
+    this.sounds.hackEnded.play();
   }
 
   kill() {

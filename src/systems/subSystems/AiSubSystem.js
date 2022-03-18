@@ -100,6 +100,10 @@ export default class AiSubSystem {
     const distanceToTargetCharacter = TileMath.distance(enemyTilePosition, targetCharacterPosition);
     const enemyFirearm = enemy.inventory.getItemBySlot("firearm");
 
+    // console.log(
+    //   `${targetCharacter.characterType}: ${targetCharacterPosition.x}, ${targetCharacterPosition.y} spotted: ${targetCharacterSpotted}`
+    // );
+
     if (!targetCharacter.isAlive) {
       enemy.ai.mode = PATROL;
     } else if (targetCharacterSpotted) {

@@ -4,7 +4,7 @@
     "items": {
       "firearm": "Seburo M-5",
       "melee": "Seburo M-5",
-      "equipmen": null
+      "equipment": null
     }
   },
   "enemy-01": {
@@ -12,7 +12,7 @@
     "items": {
       "firearm": "Seburo M-5",
       "melee": "Seburo M-5",
-      "equipmen": null
+      "equipment": null
     }
   },
   "enemy-02": {
@@ -20,7 +20,7 @@
     "items": {
       "firearm": "Seburo C26-A",
       "melee": "Seburo C26-A",
-      "equipmen": null
+      "equipment": null
     }
   }
 }

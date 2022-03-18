@@ -7,10 +7,10 @@ export default class BootScene extends Phaser.Scene {
 
   preload() {
     this.playState = {
-      levelNumber: 0,
+      levelNumber: 3,
       items: {
         firearm: "Seburo C-25A",
-        melee: null,
+        melee: "Seburo C-25A",
         equipment: null,
       },
     };
@@ -104,7 +104,17 @@ export default class BootScene extends Phaser.Scene {
     // Audio
     this.load.audio("enter", "assets/audio/sfx_menu_select2.wav");
 
+    this.load.audio("elevator", "assets/audio/sfx_movement_dooropen4.wav");
+
     this.load.audio("walk", "assets/audio/sfx_movement_footstepsloop4_fast.wav");
+    this.load.audio("melee", "assets/audio/sfx_wpn_punch4.wav");
+    this.load.audio("fire-player", "assets/audio/sfx_weapon_singleshot10.wav");
+    this.load.audio("fire-enemy", "assets/audio/sfx_weapon_singleshot7.wav");
+    this.load.audio("hit", "assets/audio/sfx_damage_hit2.wav");
+    this.load.audio("hack", "assets/audio/sfx_sounds_negative2.wav");
+    this.load.audio("die-enemy", "assets/audio/sfx_deathscream_human2.wav");
+    this.load.audio("die-player", "assets/audio/sfx_sounds_error12.wav");
+    this.load.audio("hack-ended", "assets/audio/sfx_sound_neutral5.wav");
   }
 
   create() {

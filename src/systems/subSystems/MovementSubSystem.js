@@ -8,8 +8,8 @@ export default class MovementSubSystem {
 
   tryToPathPlayer(playerControlled, toTile) {
     const path = this.aStar.findPath(playerControlled.getTilePosition(), toTile);
-    console.log("path:");
-    console.log(path);
+    // console.log("path:");
+    // console.log(path);
     if (path.length > 1) {
       playerControlled.setMoveQueue(path);
       return true;

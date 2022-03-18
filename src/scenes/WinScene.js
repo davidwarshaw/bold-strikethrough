@@ -18,6 +18,8 @@ export default class WinScene extends Phaser.Scene {
     const centerX = properties.width / 2;
     const centerY = properties.height / 2;
 
+    const winText = "You win!";
+    this.font.render(centerX + this.offsetForText(winText), centerY - 100, winText);
     this.add.image(centerX, centerY - 60, "character-player", 0);
 
     this.menu = new Menu(
