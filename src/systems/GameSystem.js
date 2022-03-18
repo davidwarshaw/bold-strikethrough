@@ -232,18 +232,23 @@ export default class GameSystem {
   async tryToTakeEnemiesTurn() {
     // console.log("tryToTakeEnemiesTurn:");
 
+    // Determine turns
     this.enemies
       .getAliveNotPlayerControlled()
       .forEach((enemy) => enemy.setNextTurn(this.aiSubSystem.determineTurn(enemy)));
-    const turnPromises = this.enemies.getAlive().map(
+
+    // Play turns out
+    const turnPromises = this.enemies.getAliveNotPlayerControlled().map(
       (enemy) =>
         new Promise((resolve) => {
           this.tryToTakeCharacterTurn(enemy);
-          enemy.recalculateFov();
           resolve();
         })
     );
     await Promise.all(turnPromises);
+
+    // Update FOVs
+    this.enemies.getAliveNotPlayerControlled().forEach((enemy) => enemy.recalculateFov());
   }
 
   async tryToTakeCharacterTurn(character) {

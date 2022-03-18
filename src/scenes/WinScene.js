@@ -35,6 +35,8 @@ export default class WinScene extends Phaser.Scene {
       centerX,
       centerY
     );
+
+    this.sound.stopAll();
   }
 
   offsetForText(text) {

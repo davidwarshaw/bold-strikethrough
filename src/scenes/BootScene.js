@@ -7,7 +7,7 @@ export default class BootScene extends Phaser.Scene {
 
   preload() {
     this.playState = {
-      levelNumber: 3,
+      levelNumber: 0,
       items: {
         firearm: "Seburo C-25A",
         melee: "Seburo C-25A",
